@@ -79,6 +79,7 @@ const nextEmployee = [
 
 // Function to initialize program
 function init() {
+    console.log("Ready to build your team roster? Let's get started!")
     // Inquirer to gather information about the development team members and to create objects for each team member 
     inquirer
     .prompt(questions)

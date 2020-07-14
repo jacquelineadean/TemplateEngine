@@ -16,7 +16,7 @@ const employeeArray = [];
 let employee = "";
 
 // Questions for all employees
-const questions = [
+let questions = [
     {
         type: "input",
         message: "What is the employee's name?",
@@ -116,6 +116,8 @@ function init() {
                 employee = new Manager(name, id, email, officeNumber);
                 // Add employee object to the employees array
                 employeeArray.push(employee);
+                // 
+                questions[3].choices = ['Engineer', 'Intern'];
                 // run function see if they are done
                 addEmployee();
             });
@@ -130,6 +132,7 @@ function addEmployee() {
     .prompt(nextEmployee)
     .then(function ({add}) {
         if (add === "Yes") {
+            // Repeat process of adding a new employee 
             return init();
         } else if (add === "No") {
             // After the user has input all employees desired, call `render` function to generate and return a block of HTML including templated divs for each employee
@@ -137,7 +140,7 @@ function addEmployee() {
             // write HTML returned from the `render` function to a file named `team.html` in the `output` folder
             fs.writeFile(outputPath, employeeSummary, function (err) {
                 if (err) throw err;
-                console.log("Success!");
+                console.log("Successfully created team.html!");
             })
         }
     })

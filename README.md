@@ -27,7 +27,7 @@ so that I have quick access to emails and GitHub profiles
 # Usage
 ![Demo](Assets/demo.gif)
 
-** Once the application has been installed, the user will run "node app.js" in the command line to initialize the prompts.
+** Once the application has been installed, the user will run "npm start" in the command line to initialize the prompts.
 
 ** After answering each prompt accordingly, the user will will be presented with an HTML file that displays the formatted team roster based on the information provided.
 
